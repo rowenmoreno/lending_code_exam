@@ -59,7 +59,7 @@ class TransactionItem extends StatelessWidget {
             Container(
               padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
-                color: _getStatusColor().withValues(alpha: 0.1),
+                color: _getStatusColor().withAlpha((0.1 * 255).toInt()),
                 borderRadius: BorderRadius.circular(12),
               ),
               child: Icon(
@@ -81,7 +81,7 @@ class TransactionItem extends StatelessWidget {
                       vertical: 4,
                     ),
                     decoration: BoxDecoration(
-                      color: _getStatusColor().withValues(alpha: 0.1),
+                      color: _getStatusColor().withAlpha((0.1 * 255).toInt()),
                       borderRadius: BorderRadius.circular(6),
                     ),
                     child: Text(
