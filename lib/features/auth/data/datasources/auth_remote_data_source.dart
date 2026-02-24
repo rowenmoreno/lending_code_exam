@@ -25,11 +25,15 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
       // In production, this would be a real auth endpoint
       final response = await client.get(
         Uri.parse('https://jsonplaceholder.typicode.com/users/1'),
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
       );
 
       if (response.statusCode == 200) {
         final jsonResponse = json.decode(response.body) as Map<String, dynamic>;
-        
+
         // Simple authentication logic for demo
         if (username == 'demo' && password == 'password') {
           return User(
